@@ -1,10 +1,12 @@
-﻿using LibrarySystem.Models;
-using LibrarySystem.DTOs;
+﻿using LibrarySystem.DTOs;
+using LibrarySystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 
 namespace LibrarySystem.Controllers;
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class BooksController : ControllerBase
@@ -146,3 +148,4 @@ public class BooksController : ControllerBase
         return Ok(result);
     }
 }
+
